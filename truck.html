@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>载装车点位看板</title>
+	<link rel="stylesheet" type="text/css" href="css/truck.css">
+</head>
+	<body>
+		<header>
+			<div class="tab">
+				<button class="current" disabled>载装车点位看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='car.html'">整车数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='supp.html'">运输供应商数据看板</button>
+			</div>
+		</header>
+		<main>
+			<div class="col left">
+				<form action="">
+					<label for="supp">选择供应商</label>
+					<select name="supplier" id="supp">
+						<option value="" selected disabled>--请选择供应商--</option>
+						<option value="1">供应商 1</option>
+						<option value="2">供应商 2</option>
+					</select>
+					<label for="truck">选择装载板车</label>
+					<select name="truck-model" id="truck">
+						<option value="" selected disabled>--请选择装载板车--</option>
+						<option value="A">板车 A</option>
+						<option value="B">板车 B</option>
+					</select>
+					<label for="car">选择整车车型</label>
+					<select name="car-model" id="car">
+						<option value="" selected disabled>--请选择整车车型--</option>
+						<option value="2023">凯迪拉克 XT6 2023</option>
+						<option value="2022">凯迪拉克 XT6 2022</option>
+					</select>
+					<select name="car-version">
+						<option value="" selected disabled>--请选择版本--</option>
+						<option value="64">六座四驱铂金型黑钻版</option>
+						<option value="46">四座六驱铂金型黑钻版</option>
+					</select>
+				</form>
+				<img class="car" src="img/truck/car.jpg" alt="car sample image">
+			</div>
+			<div class="col right">
+				<img src="img/truck/truck.jpg" alt="truck side view">
+			</div>
+		</main>
+	</body>
+</html>

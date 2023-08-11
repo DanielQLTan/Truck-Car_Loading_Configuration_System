@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>整车数据看板</title>
+	<link rel="stylesheet" type="text/css" href="css/car.css">
+</head>
+	<body>
+		<header>
+			<div class="tab">
+				<button onclick="window.location.href='truck.html'">载装车点位看板</button>
+			</div>
+			<div class="tab">
+				<button class="current" disabled>整车数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='supp.html'">运输供应商数据看板</button>
+			</div>
+		</header>
+		<main>
+			<div class="col left">
+				<form class="car-selection" action="">
+					<select name="brand" class="top-select">
+						<option value="" selected disabled>--请选择品牌--</option>
+						<option value="A">品牌 A</option>
+						<option value="B">品牌 B</option>
+					</select>
+					<select name="model" class="top-select">
+						<option value="" selected disabled>--请选择车型--</option>
+						<option value="1">车型 1</option>
+						<option value="2">车型 2</option>
+					</select>
+					<button type="submit">选择</button>
+				</form>
+				<div class="box">
+					<img src="img/car/photo.jpg" alt="car photo">
+					<img src="img/car/blueprint.jpg" alt="car blueprint">
+				</div>
+				<form class="car-version" action="">
+					<select name="version" class="bot-select">
+						<option value="" selected disabled>--请选择版本--</option>
+						<option value="a">版本 a</option>
+						<option value="b">版本 b</option>
+					</select>
+					<button type="reset">取消</button>
+					<button type="submit">确认</button>
+				</form>
+			</div>
+			<div class="col mid">
+				<div class="row">
+					<div class="dimension">尺寸（长/宽/高/轴距-mm)</div>
+				</div>
+				<div class="row">
+					<div class="dimension">长(mm)</div>
+					<div class="data">5056</div>
+				</div>
+				<div class="row">
+					<div class="dimension">宽(mm)</div>
+					<div class="data">1964</div>
+				</div>
+				<div class="row">
+					<div class="dimension">高(mm)</div>
+					<div class="data">1780</div>
+				</div>
+				<div class="row">
+					<div class="dimension">轴距(mm)</div>
+					<div class="data">2863</div>
+				</div>
+				<div class="row">
+					<div class="dimension">前轮距(mm)</div>
+					<div class="data">1687</div>
+				</div>
+				<div class="row">
+					<div class="dimension">后轮距(mm)</div>
+					<div class="data">1683</div>
+				</div>
+				<div class="row">
+					<div class="dimension">轮胎尺寸</div>
+					<div class="data">235/55 R20</div>
+				</div>
+				<div class="row">
+					<div class="dimension">扭矩数据</div>
+					<div class="data">350N·m</div>
+				</div>
+			</div>
+			<div class="col right">
+				<img class="trucks" src="img/car/truck1.jpg" alt="truck side view 1">
+				<img class="trucks" src="img/car/truck2.jpg" alt="truck side view 2">
+				<img class="trucks" src="img/car/truck3.jpg" alt="truck side view 3">
+			</div>
+		</main>
+	</body>
+</html>
