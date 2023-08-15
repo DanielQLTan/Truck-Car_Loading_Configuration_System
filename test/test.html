@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>test</title>
+</head>
+<body>
+	<h1>Test</h1>
+	<div id="info_display"></div>
+	<script type="text/javascript">
+		// opening
+		var socket = new WebSocket("ws://localhost:8000");
+
+		// simple sending
+		var socket = new WebSocket("ws://localhost:8000");
+		socket.onopen = (event) => {
+			socket.send("轿车名字");
+		};
+
+		// // json sending (not recommended)
+		// var socket = new WebSocket("ws://localhost:8000");
+		// function send_json() {
+		// 	var msg = {
+		// 		type: "message",
+		// 		text: "轿车版本"
+		// 	};
+		// 	socket.send(JSON.stringify(msg));
+		// }
+		// send_json();
+
+		// sending and receiving
+		var send_and_receive = function() {
+			var socket = new WebSocket("ws://localhost:8000");
+			socket.addEventListener("open", function(event) {
+				var request = {
+					"method": "GET",
+					"params": {
+						"key": "truck",
+						"value": {
+							"supplier": "供应商",
+							"model": "车型"
+						}
+					}
+				}
+				socket.send(JSON.stringify(request)+"\n");
+			});
+			socket.addEventListener("message", function(event) {
+				console.log(event.data);
+			});
+		};
+		send_and_receive();
+
+		// simple receiving
+		socket.onmessage = (event) => {
+			console.log(event.data);
+		};
+
+		// json receiving (needs to be inside a function)
+		socket.addEventListener("message", function(event) {
+			let data = JSON.parse(event.data);
+			car_info = [];
+			for (let i=0; i<data.length; i+=1) {
+				car_info.push(JSON.parse(data[i][1]));
+			}
+			console.log(car_info);
+			info_display.innerHTML = JSON.stringify(car_info);
+		});
+
+		// // closing
+		// socket.close();
+	</script>
+</body>
+</html>
