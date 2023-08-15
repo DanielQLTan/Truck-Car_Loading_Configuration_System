@@ -10,16 +10,16 @@
 	<div id="info_display"></div>
 	<script type="text/javascript">
 		// opening
-		var socket = new WebSocket("ws://localhost:8000");
+		var socket = new WebSocket("ws://localhost:8001");
 
 		// simple sending
-		var socket = new WebSocket("ws://localhost:8000");
+		var socket = new WebSocket("ws://localhost:8001");
 		socket.onopen = (event) => {
 			socket.send("轿车名字");
 		};
 
 		// // json sending (not recommended)
-		// var socket = new WebSocket("ws://localhost:8000");
+		// var socket = new WebSocket("ws://localhost:8001");
 		// function send_json() {
 		// 	var msg = {
 		// 		type: "message",
@@ -31,7 +31,7 @@
 
 		// sending and receiving
 		var send_and_receive = function() {
-			var socket = new WebSocket("ws://localhost:8000");
+			var socket = new WebSocket("ws://localhost:8001");
 			socket.addEventListener("open", function(event) {
 				var request = {
 					"method": "GET",
