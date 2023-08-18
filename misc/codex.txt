@@ -10,7 +10,7 @@ receive = ["供应商1", "供应商2", "供应商3", "供应商4", "供应商5"]
 request = {
 	"method": "GET",
 	"params": {
-		"key": "model_list"
+		"key": "car-model_list"
 	}
 };
 receive = ["轿车车型1", "轿车车型2", "轿车车型3", "轿车车型4", "轿车车型5"];
@@ -44,11 +44,11 @@ receive = {
 	"positions": [{"x": 10, "y": 10, "z": "✓", "r": "reason"}, {"x": 20, "y": 20, "z": "⨯", "r": "reason"}, {"x": 30, "y": 30, "z": "?", "r": "reason"}]
 };
 
-// on model choice
+// on car-model choice
 request = {
 	"method": "GET",
 	"params": {
-		"key": "version_list",
+		"key": "car-version_list",
 		"value": {
 			"model": "某轿车车型"
 		}

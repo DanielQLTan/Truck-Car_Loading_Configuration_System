@@ -32,7 +32,7 @@ async def handle_request(websocket):
                     if val == {"supplier": "鸿宇轿运"} and param["key"] == "truck_list":
                         res = ["A型: 长头7位车"]
                         await websocket.send(json.dumps(res, ensure_ascii=False))
-                    if val == {"car-model": "凯迪拉克 XT6 2023"}:
+                    if val == {"model": "凯迪拉克 XT6 2023"}:
                         res = ["六座四驱铂金型黑钻版"]
                         await websocket.send(json.dumps(res, ensure_ascii=False))
                     if val == {"supplier": "鸿宇轿运"} and param["key"] == "supp_info":
@@ -56,15 +56,15 @@ async def handle_request(websocket):
                         await websocket.send(json.dumps(res, ensure_ascii=False))
                     if val == {"supplier": "鸿宇轿运", "truck": "A型: 长头7位车"} and param["key"] == "supp_truck":
                         res = {"size": "17100*2100*5000","image": "/img/truck/truck.jpg",
-                               "angles": ["/img/supp/six_suv.jpg", "/img/supp/end.jpg", 
-                                          "/img/supp/slope.jpg", "/img/supp/left.jpg",
-                                          "/img/supp/head.jpg", "/img/supp/side.jpg"]}
+                               "angles": ["/img/supp/six_suv.jpg", "/img/supp/six_suv.jpg", 
+                                          "/img/supp/six_suv.jpg", "/img/supp/six_suv.jpg",
+                                          "/img/supp/six_suv.jpg", "/img/supp/six_suv.jpg"]}
                         await websocket.send(json.dumps(res, ensure_ascii=False))
                     if val == {"brand": "凯迪拉克", "model": "XT6_2023"}:
                         res = ["六座四驱铂金型黑钻版"]
                         await websocket.send(json.dumps(res, ensure_ascii=False))
-                    if val == {"car-model": "凯迪拉克 XT6 2023", "car-version": "六座四驱铂金型黑钻版"}:
-                        res = {"image": "/img/car/truck3.jpg",
+                    if val == {"model": "凯迪拉克 XT6 2023", "version": "六座四驱铂金型黑钻版"}:
+                        res = {"image": "/img/car/photo.jpg",
                                "size": {"x": 2275, "y": 754},
                                "positions": [{"x": 232, "y": 102, "z": "⨯", "r": "高风险:车长过长且超过限高"}, 
                                              {"x": 776, "y": 168, "z": "✓", "r": "安全"}, 

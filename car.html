@@ -32,16 +32,16 @@
 						<option value="2">车型 2</option> -->
 					</select>
 					<div class="box">
-						<img id="car_photo" src="img/car/photo.jpg" alt="car photo">
-						<img id="car_blue" src="img/car/blueprint.jpg" alt="car blueprint">
+						<img id="car_photo" src="img/placeholder.jpg" alt="car photo">
+						<img id="car_blue" src="img/placeholder.jpg" alt="car blueprint">
 					</div>
 					<select name="version" class="bot-select" id="version" onchange="get_car_img()">
 						<option value="" selected disabled>--请选择版本--</option>
 						<!-- <option value="a">版本 a</option>
 						<option value="b">版本 b</option> -->
 					</select>
-					<button type="reset">取消</button>
-					<button onclick="get_car_info()">确认</button>
+					<button type="reset" onclick="clean()">清空</button>
+					<button type="button" onclick="get_car_info()">确认</button>
 				</form>
 			</div>
 			<div class="col mid">
@@ -50,35 +50,35 @@
 				</div>
 				<div class="row">
 					<div class="dimension">长(mm)</div>
-					<div class="data" id="length">5056</div>
+					<div class="data" id="length">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">宽(mm)</div>
-					<div class="data" id="width">1964</div>
+					<div class="data" id="width">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">高(mm)</div>
-					<div class="data" id="height">1780</div>
+					<div class="data" id="height">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">轴距(mm)</div>
-					<div class="data" id="axis">2863</div>
+					<div class="data" id="axis">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">前轮距(mm)</div>
-					<div class="data" id="front">1687</div>
+					<div class="data" id="front">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">后轮距(mm)</div>
-					<div class="data" id="back">1683</div>
+					<div class="data" id="back">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">轮胎尺寸</div>
-					<div class="data" id="tire">235/55 R20</div>
+					<div class="data" id="tire">-</div>
 				</div>
 				<div class="row">
 					<div class="dimension">扭矩数据</div>
-					<div class="data" id="torque">350N·m</div>
+					<div class="data" id="torque">-</div>
 				</div>
 			</div>
 			<div class="col right">

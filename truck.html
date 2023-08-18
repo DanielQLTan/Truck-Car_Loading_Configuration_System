@@ -22,33 +22,33 @@
 			<div class="col left">
 				<form action="">
 					<label for="supp">选择供应商</label>
-					<select name="supplier" id="supp">
+					<select name="supplier" id="supp" onchange="get_truck_list()">
 						<option value="" selected disabled>--请选择供应商--</option>
-						<option value="1">供应商 1</option>
-						<option value="2">供应商 2</option>
+						<!-- <option value="1">供应商 1</option>
+						<option value="2">供应商 2</option> -->
 					</select>
 					<label for="truck">选择装载板车</label>
-					<select name="truck" id="truck">
+					<select name="truck" id="truck" onchange="get_truck_info()">
 						<option value="" selected disabled>--请选择装载板车--</option>
-						<option value="A">板车 A</option>
-						<option value="B">板车 B</option>
+						<!-- <option value="A">板车 A</option>
+						<option value="B">板车 B</option> -->
 					</select>
 					<label for="car">选择整车车型</label>
-					<select name="car-model" id="car">
+					<select name="car-model" id="car-model" onchange="get_version_list()">
 						<option value="" selected disabled>--请选择整车车型--</option>
-						<option value="2023">凯迪拉克 XT6 2023</option>
-						<option value="2022">凯迪拉克 XT6 2022</option>
+						<!-- <option value="2023">凯迪拉克 XT6 2023</option>
+						<option value="2022">凯迪拉克 XT6 2022</option> -->
 					</select>
-					<select name="car-version">
+					<select name="version" id="car-version" onchange="get_car_info()">
 						<option value="" selected disabled>--请选择版本--</option>
-						<option value="64">六座四驱铂金型黑钻版</option>
-						<option value="46">四座六驱铂金型黑钻版</option>
+						<!-- <option value="64">六座四驱铂金型黑钻版</option>
+						<option value="46">四座六驱铂金型黑钻版</option> -->
 					</select>
 				</form>
-				<img class="car" src="img/truck/car.jpg" alt="car sample image">
+				<img class="car" id="car_photo" src="img/placeholder.jpg" alt="car sample image">
 			</div>
 			<div class="col right">
-				<img src="img/truck/truck.jpg" alt="truck side view">
+				<img id="truck_photo" src="img/placeholder.jpg" alt="truck side view">
 			</div>
 		</main>
 		<script type="text/javascript" src="js/truck.js"></script>

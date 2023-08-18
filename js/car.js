@@ -100,7 +100,6 @@ function get_car_img() {
 	});
 	var car_p = document.getElementById("car_photo");
 	var car_b = document.getElementById("car_blue");
-	
 	ws.addEventListener("message", function(e) {
 		var car_info = JSON.parse(e.data);
 		car_p.src = car_info.image;
@@ -150,6 +149,23 @@ function get_car_info() {
 		car_to.innerHTML = car_info.torque;
 	});
 };
+
+function clean() {
+	var model_dd = document.getElementById("model");
+	model_dd.innerHTML = "<option value=\"\" selected disabled>--请选择车型--</option>";
+	var version_dd = document.getElementById("version");
+	version_dd.innerHTML = "<option value=\"\" selected disabled>--请选择版本--</option>";
+	document.getElementById("length").innerHTML = "-";
+	document.getElementById("width").innerHTML = "-";
+	document.getElementById("height").innerHTML = "-";
+	document.getElementById("axis").innerHTML = "-";
+	document.getElementById("front").innerHTML = "-";
+	document.getElementById("back").innerHTML = "-";
+	document.getElementById("tire").innerHTML = "-";
+	document.getElementById("torque").innerHTML = "-";
+	document.getElementById("car_photo").src = "img/placeholder.jpg";
+	document.getElementById("car_blue").src = "img/placeholder.jpg";
+}
 
 // startup
 get_brand_list();
