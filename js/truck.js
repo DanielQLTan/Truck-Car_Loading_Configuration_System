@@ -1,3 +1,33 @@
+// canvas
+function draw_img(path, x, y) {
+	var c = document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	var img = new Image();
+	img.src = path;
+	c.width = document.getElementById("rcol").clientWidth * 0.9;
+	c.height = document.getElementById("rcol").clientWidth * 0.9 * y / x;
+	ctx.drawImage(img, 0, 0, c.width, c.height);
+}
+
+function draw_text(text, x, y) {
+	var c = document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	ctx.font = "48px serif";
+	ctx.fillText(text, x * c.width, y * c.height);
+}
+//
+// color: context.fillStyle = "#ff0000";
+//
+
+function draw_clear() {
+	var c = document.getElementById("canvas");
+	var ctx = c.getContext("2d");
+	ctx.clearRect(0, 0, c.width, c.height);
+}
+//
+// use at more places
+//
+
 // operations
 function get_supp_list() {
 	var ws = new WebSocket("ws://localhost:8001");
@@ -8,7 +38,7 @@ function get_supp_list() {
 				"key": "supp_list"
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var supp_dd = document.getElementById("supp");
 	ws.addEventListener("message", function(e) {
@@ -28,7 +58,7 @@ function get_model_list() {
 				"key": "car-model_list"
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var model_dd = document.getElementById("car-model");
 	ws.addEventListener("message", function(e) {
@@ -53,7 +83,7 @@ function get_truck_list() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var truck_dd = document.getElementById("truck");
 	truck_dd.innerHTML = "<option value=\"\" selected disabled>--请选择装载板车--</option>";
@@ -82,12 +112,12 @@ function get_truck_info() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
-	var truck_p = document.getElementById("truck_photo");
 	ws.addEventListener("message", function(e) {
 		var truck_info = JSON.parse(e.data);
-		truck_p.src = truck_info.image;
+		draw_clear();
+		draw_img(truck_info.image, truck_info.size.x, truck_info.size.y);
 	});
 };
 
@@ -105,7 +135,7 @@ function get_version_list() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var version_dd = document.getElementById("car-version");
 	version_dd.innerHTML = "<option value=\"\" selected disabled>--请选择版本--</option>";
@@ -134,15 +164,21 @@ function get_car_info() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var car_p = document.getElementById("car_photo");
 	ws.addEventListener("message", function(e) {
 		var car_info = JSON.parse(e.data);
 		car_p.src = car_info.image;
+		// draw_clear();
+		var positions = car_info.positions;
+		for (let position of positions) {
+			draw_text(position.z, position.x / car_info.size.x, position.y / car_info.size.y);
+		}
 	});
 };
 
 // startup
+draw_img("img/placeholder.jpg", 496, 302);
 get_supp_list();
 get_model_list();

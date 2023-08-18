@@ -8,7 +8,7 @@ function get_brand_list() {
 				"key": "brand_list"
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var brand_dd = document.getElementById("brand");
 	ws.addEventListener("message", function(e) {
@@ -33,7 +33,7 @@ function get_model_list() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var model_dd = document.getElementById("model");
 	model_dd.innerHTML = "<option value=\"\" selected disabled>--请选择车型--</option>";
@@ -64,7 +64,7 @@ function get_version_list() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var version_dd = document.getElementById("version");
 	version_dd.innerHTML = "<option value=\"\" selected disabled>--请选择版本--</option>";
@@ -96,7 +96,7 @@ function get_car_img() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var car_p = document.getElementById("car_photo");
 	var car_b = document.getElementById("car_blue");
@@ -127,7 +127,7 @@ function get_car_info() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var car_l = document.getElementById("length");
 	var car_w = document.getElementById("width");

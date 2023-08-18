@@ -69,6 +69,7 @@ request = {
 };
 receive = {
 	"image": "/img/car/sample.jpg",
+	"size": {"x": 1000, "y": 500},
 	"positions": [{"x": 10, "y": 10, "z": "✓", "r": "reason"}, {"x": 20, "y": 20, "z": "⨯", "r": "reason"}, {"x": 30, "y": 30, "z": "?", "r": "reason"}]
 };
 

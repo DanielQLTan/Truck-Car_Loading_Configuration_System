@@ -63,7 +63,12 @@ select {
   	padding-right: 25px;
 }
 
-/*Truck view*/
+/*Car Photo*/
 .car {
 	margin-top: 20px;
+}
+
+/*Canvas*/
+#canvas {
+	margin-left: 40px;
 }

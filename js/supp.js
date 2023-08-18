@@ -8,7 +8,7 @@ function get_supp_list() {
 				"key": "supp_list"
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var supp_dd = document.getElementById("supp");
 	ws.addEventListener("message", function(e) {
@@ -33,7 +33,7 @@ function get_supp_info() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var supp_e = document.getElementById("email");
 	var supp_p = document.getElementById("phone");
@@ -67,7 +67,7 @@ function get_truck_info() {
 				}
 			}
 		};
-		ws.send(JSON.stringify(request)+"\n");
+		ws.send(JSON.stringify(request) + "\n");
 	});
 	var truck_s = document.getElementById("truck_size");
 	var truck_p = document.getElementById("truck_photo");
