@@ -16,7 +16,7 @@ async def handle_request(websocket):
                 if param["key"] == "supp_list":
                     res = ["鸿宇轿运"]
                     await websocket.send(json.dumps(res, ensure_ascii=False))
-                if param["key"] == "car_model_list":
+                if param["key"] == "car-model_list":
                     res = ["凯迪拉克 XT6 2023"]
                     await websocket.send(json.dumps(res, ensure_ascii=False))
                 # Car page startup
