@@ -59,6 +59,7 @@ async def handle_request(websocket):
                                "angles": ["/img/supp/six_suv.jpg", "/img/supp/end.jpg", 
                                           "/img/supp/slope.jpg", "/img/supp/left.jpg",
                                           "/img/supp/head.jpg", "/img/supp/side.jpg"]}
+                        await websocket.send(json.dumps(res, ensure_ascii=False))
                     if val == {"brand": "某品牌", "model": "某车型"}:
                         res = ["六座四驱铂金型黑钻版"]
                         await websocket.send(json.dumps(res, ensure_ascii=False))
