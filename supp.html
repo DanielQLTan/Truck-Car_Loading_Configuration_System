@@ -22,34 +22,37 @@
 			<div class="col left">
 				<form action="">
 					<label for="supp">供应商</label>
-					<select name="supplier" id="supp">
+					<select name="supplier" id="supp" onchange="get_supp_info()">
 						<option value="" selected disabled>--请选择供应商--</option>
-						<option value="1">供应商 1</option>
-						<option value="2">供应商 2</option>
+						<!-- <option value="1">供应商 1</option>
+						<option value="2">供应商 2</option> -->
 					</select>
 					<label for="truck">装载板车</label>
-					<select name="truck" id="truck">
+					<select name="truck" id="truck" onchange="get_truck_info()">
 						<option value="" selected disabled>--请选择装载板车--</option>
-						<option value="A">板车 A</option>
-						<option value="B">板车 B</option>
+						<!-- <option value="A">板车 A</option>
+						<option value="B">板车 B</option> -->
 					</select>
 				</form>
 				<div class="contact">联系人信息</div>
-				<div class="info">info@offshoreintel.cn</div>
-				<div class="info">+86-13000298888</div>
+				<div class="info" id="email"></div>
+				<div class="info" id="phone"></div>
 			</div>
 			<div class="col right">
-				<img src="img/supp/truck_info.jpg" alt="truck info image">
+				<img id="truck_photo" src="img/truck/truck_info.jpg" alt="truck info image">
 				<div class="box">
-					<p>板车尺寸信息</p>
+					<p id="truck_size">板车尺寸信息</p>
 				</div>
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 1">
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 2">
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 3">
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 4">
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 5">
-				<img class="angle" src="img/supp/placeholder.jpg" alt="truck angle 6">
+				<div id="angles">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 1">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 2">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 3">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 4">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 5">
+					<img class="angle" src="img/truck/placeholder.jpg" alt="truck angle 6">
+				</div>
 			</div>
 		</main>
+		<script type="text/javascript" src="js/supp.js"></script>
 	</body>
 </html>
