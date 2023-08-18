@@ -8,15 +8,18 @@
 <body>
 	<h1>Test</h1>
 	<div id="info_display"></div>
+    
+    <img id="image" src="" alt="Received Image">
+    
 	<script type="text/javascript">
 		// opening
 		var socket = new WebSocket("ws://localhost:8001");
 
 		// simple sending
-		var socket = new WebSocket("ws://localhost:8001");
-		socket.onopen = (event) => {
-			socket.send("轿车名字");
-		};
+//		var socket = new WebSocket("ws://localhost:8001");
+//		socket.onopen = (event) => {
+//			socket.send("轿车名字");
+//		};
 
 		// // json sending (not recommended)
 		// var socket = new WebSocket("ws://localhost:8001");
@@ -28,6 +31,7 @@
 		// 	socket.send(JSON.stringify(msg));
 		// }
 		// send_json();
+
 
 		// sending and receiving
 		var send_and_receive = function() {
@@ -46,26 +50,32 @@
 				socket.send(JSON.stringify(request)+"\n");
 			});
 			socket.addEventListener("message", function(event) {
-				console.log(event.data);
+				// console.log(event.data);
 			});
 		};
 		send_and_receive();
-
+        
+        // socket.onmessage = function(event) {
+        //     const imageElement = document.getElementById('image');
+        //     imageElement.src = 'data:image/jpg;base64,' + event.data;
+        //     console.log("image displayed");
+        // };
+        
 		// simple receiving
-		socket.onmessage = (event) => {
-			console.log(event.data);
-		};
+//		socket.onmessage = (event) => {
+//			console.log(event.data);
+//		};
 
 		// json receiving (needs to be inside a function)
-		socket.addEventListener("message", function(event) {
-			let data = JSON.parse(event.data);
-			car_info = [];
-			for (let i=0; i<data.length; i+=1) {
-				car_info.push(JSON.parse(data[i][1]));
-			}
-			console.log(car_info);
-			info_display.innerHTML = JSON.stringify(car_info);
-		});
+//		socket.addEventListener("message", function(event) {
+//			let data = JSON.parse(event.data);
+//			car_info = [];
+//			for (let i=0; i<data.length; i+=1) {
+//				car_info.push(JSON.parse(data[i][1]));
+//			}
+//			console.log(car_info);
+//			info_display.innerHTML = JSON.stringify(car_info);
+//		});
 
 		// // closing
 		// socket.close();

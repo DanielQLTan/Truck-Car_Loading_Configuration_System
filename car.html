@@ -21,30 +21,27 @@
 		<main>
 			<div class="col left">
 				<form class="car-selection" action="">
-					<select name="brand" class="top-select">
+					<select name="brand" class="top-select" id="brand" onchange="get_model_list()">
 						<option value="" selected disabled>--请选择品牌--</option>
-						<option value="A">品牌 A</option>
-						<option value="B">品牌 B</option>
+						<!-- <option value="A">品牌 A</option>
+						<option value="B">品牌 B</option> -->
 					</select>
-					<select name="model" class="top-select">
+					<select name="model" class="top-select" id="model" onchange="get_version_list()">
 						<option value="" selected disabled>--请选择车型--</option>
-						<option value="1">车型 1</option>
-						<option value="2">车型 2</option>
+						<!-- <option value="1">车型 1</option>
+						<option value="2">车型 2</option> -->
 					</select>
-					<button type="submit">选择</button>
-				</form>
-				<div class="box">
-					<img src="img/car/photo.jpg" alt="car photo">
-					<img src="img/car/blueprint.jpg" alt="car blueprint">
-				</div>
-				<form class="car-version" action="">
-					<select name="version" class="bot-select">
+					<div class="box">
+						<img id="car_photo" src="img/car/photo.jpg" alt="car photo">
+						<img id="car_blue" src="img/car/blueprint.jpg" alt="car blueprint">
+					</div>
+					<select name="version" class="bot-select" id="version" onchange="get_car_img()">
 						<option value="" selected disabled>--请选择版本--</option>
-						<option value="a">版本 a</option>
-						<option value="b">版本 b</option>
+						<!-- <option value="a">版本 a</option>
+						<option value="b">版本 b</option> -->
 					</select>
 					<button type="reset">取消</button>
-					<button type="submit">确认</button>
+					<button onclick="get_car_info()">确认</button>
 				</form>
 			</div>
 			<div class="col mid">
@@ -53,35 +50,35 @@
 				</div>
 				<div class="row">
 					<div class="dimension">长(mm)</div>
-					<div class="data">5056</div>
+					<div class="data" id="length">5056</div>
 				</div>
 				<div class="row">
 					<div class="dimension">宽(mm)</div>
-					<div class="data">1964</div>
+					<div class="data" id="width">1964</div>
 				</div>
 				<div class="row">
 					<div class="dimension">高(mm)</div>
-					<div class="data">1780</div>
+					<div class="data" id="height">1780</div>
 				</div>
 				<div class="row">
 					<div class="dimension">轴距(mm)</div>
-					<div class="data">2863</div>
+					<div class="data" id="axis">2863</div>
 				</div>
 				<div class="row">
 					<div class="dimension">前轮距(mm)</div>
-					<div class="data">1687</div>
+					<div class="data" id="front">1687</div>
 				</div>
 				<div class="row">
 					<div class="dimension">后轮距(mm)</div>
-					<div class="data">1683</div>
+					<div class="data" id="back">1683</div>
 				</div>
 				<div class="row">
 					<div class="dimension">轮胎尺寸</div>
-					<div class="data">235/55 R20</div>
+					<div class="data" id="tire">235/55 R20</div>
 				</div>
 				<div class="row">
 					<div class="dimension">扭矩数据</div>
-					<div class="data">350N·m</div>
+					<div class="data" id="torque">350N·m</div>
 				</div>
 			</div>
 			<div class="col right">
@@ -90,5 +87,6 @@
 				<img class="trucks" src="img/car/truck3.jpg" alt="truck side view 3">
 			</div>
 		</main>
+		<script type="text/javascript" src="js/car.js"></script>
 	</body>
 </html>

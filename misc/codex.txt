@@ -10,7 +10,7 @@ receive = ["供应商1", "供应商2", "供应商3", "供应商4", "供应商5"]
 request = {
 	"method": "GET",
 	"params": {
-		"key": "car-model_list"
+		"key": "model_list"
 	}
 };
 receive = ["轿车车型1", "轿车车型2", "轿车车型3", "轿车车型4", "轿车车型5"];
@@ -44,13 +44,13 @@ receive = {
 	"positions": [{"x": 10, "y": 10, "z": "✓", "r": "reason"}, {"x": 20, "y": 20, "z": "⨯", "r": "reason"}, {"x": 30, "y": 30, "z": "?", "r": "reason"}]
 };
 
-// on car-model choice
+// on model choice
 request = {
 	"method": "GET",
 	"params": {
-		"key": "car-version_list",
+		"key": "version_list",
 		"value": {
-			"car-model": "某轿车车型"
+			"model": "某轿车车型"
 		}
 	}
 };
@@ -62,8 +62,8 @@ request = {
 	"params": {
 		"key": "car_info",
 		"value": {
-			"car-model": "某轿车车型",
-			"car-version": "某轿车版本"
+			"model": "某轿车车型",
+			"version": "某轿车版本"
 		}
 	}
 };
@@ -96,11 +96,11 @@ request = {
 };
 receive = ["车型1", "车型2", "车型3", "车型4", "车型5"];
 
-// on model choice OR confirmation
+// on model choice
 request = {
 	"method": "GET",
 	"params": {
-		"key": "car-version_list",
+		"key": "version_list",
 		"value": {
 			"brand": "某品牌",
 			"model": "某车型"
@@ -109,21 +109,21 @@ request = {
 };
 receive = ["轿车版本1", "轿车版本2", "轿车版本3", "轿车版本4", "轿车版本5"];
 
-// on car-version choice OR confirmation
+// on version choice OR confirmation
 request = {
 	"method": "GET",
 	"params": {
-		"key": "car-version_list",
+		"key": "car_info",
 		"value": {
 			"brand": "某品牌",
 			"model": "某车型",
-			"car-version": "某轿车版本"
+			"version": "某轿车版本"
 		}
 	}
 };
 receive = {
 	"image": "/img/car/sample.jpg",
-	"blueprint": "/img/blue/sample.jpg",
+	"blueprint": "/img/car/sample_blue.jpg",
 	"length": 5056,
 	"width": 1964,
 	"height": 1780,
@@ -166,7 +166,7 @@ receive = {
 request = {
 	"method": "GET",
 	"params": {
-		"key": "truck_info",
+		"key": "supp_truck",
 		"value": {
 			"supplier": "某供应商",
 			"truck": "某板车"
