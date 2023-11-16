@@ -71,4 +71,9 @@ select {
 /*Canvas*/
 #canvas {
 	margin-left: 40px;
+	position: absolute;
 }
+
+/* #truck_photo {
+	display: absolute;
+} */
