@@ -1,6 +1,6 @@
 // operations
 function get_brand_list() {
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -22,7 +22,7 @@ function get_brand_list() {
 function get_model_list() {
 	var brand_slct = document.getElementById("brand");
 	var brand_choice = brand_slct.options[brand_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -52,7 +52,7 @@ function get_version_list() {
 	var brand_choice = brand_slct.options[brand_slct.selectedIndex].value;
 	var model_slct = document.getElementById("model");
 	var model_choice = model_slct.options[model_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -83,7 +83,7 @@ function get_car_img() {
 	var model_choice = model_slct.options[model_slct.selectedIndex].value;
 	var version_slct = document.getElementById("version");
 	var version_choice = version_slct.options[version_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -114,7 +114,7 @@ function get_car_info() {
 	var model_choice = model_slct.options[model_slct.selectedIndex].value;
 	var version_slct = document.getElementById("version");
 	var version_choice = version_slct.options[version_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",

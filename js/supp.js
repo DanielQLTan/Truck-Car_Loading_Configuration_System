@@ -1,6 +1,6 @@
 // operations
 function get_supp_list() {
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -22,7 +22,7 @@ function get_supp_list() {
 function get_supp_info() {
 	var supp_slct = document.getElementById("supp");
 	var supp_choice = supp_slct.options[supp_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -55,7 +55,7 @@ function get_truck_info() {
 	var supp_choice = supp_slct.options[supp_slct.selectedIndex].value;
 	var truck_slct = document.getElementById("truck");
 	var truck_choice = truck_slct.options[truck_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://localhost:8001");
+	var ws = new WebSocket("ws://175.102.11.202:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
