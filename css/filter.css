@@ -43,7 +43,7 @@ main {
 	margin-right: 20px;
 }
 
-/*Selection Area*/
+/*Select*/
 label {
 	display: inline-block;
 	font-size: 24px;
@@ -68,7 +68,31 @@ select {
 	margin-top: 20px;
 }
 
-/*Canvas*/
-#canvas {
-	margin-left: 40px;
+/*Selection array*/
+.arr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+.arr select {
+	width: 20%;
+	font-size: 24px;
+	background-color: grey;
+	color: white;
+	border: none;
+	padding: 10px;
+	margin-bottom: 20px;
+  	appearance: none;
+  	padding-right: 25px;
+}
+.help {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.help img {
+	width: 80%;
 }

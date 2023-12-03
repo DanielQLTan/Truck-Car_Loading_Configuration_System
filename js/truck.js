@@ -6,7 +6,7 @@ function draw_img(path, x, y) {
 	img.src = path;
 	c.width = document.getElementById("rcol").clientWidth * 0.9;
 	c.height = document.getElementById("rcol").clientWidth * 0.9 * y / x;
-	// ctx.drawImage(img, 0, 0, c.width, c.height);
+	ctx.drawImage(img, 0, 0, c.width, c.height);
 }
 
 function draw_text(text, x, y) {
@@ -30,7 +30,7 @@ function draw_clear() {
 
 // operations
 function get_supp_list() {
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -50,7 +50,7 @@ function get_supp_list() {
 };
 
 function get_model_list() {
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -72,7 +72,7 @@ function get_model_list() {
 function get_truck_list() {
 	var supp_slct = document.getElementById("supp");
 	var supp_choice = supp_slct.options[supp_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -100,7 +100,7 @@ function get_truck_info() {
 	var supp_choice = supp_slct.options[supp_slct.selectedIndex].value;
 	var truck_slct = document.getElementById("truck");
 	var truck_choice = truck_slct.options[truck_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -118,15 +118,13 @@ function get_truck_info() {
 		var truck_info = JSON.parse(e.data);
 		draw_clear();
 		draw_img(truck_info.image, truck_info.size.x, truck_info.size.y);
-		var car_ph = document.getElementById("truck_photo");
-		car_ph.src = truck_info.image;
 	});
 };
 
 function get_version_list() {
 	var model_slct = document.getElementById("car-model");
 	var model_choice = model_slct.options[model_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",
@@ -154,7 +152,7 @@ function get_car_info() {
 	var model_choice = model_slct.options[model_slct.selectedIndex].value;
 	var version_slct = document.getElementById("car-version");
 	var version_choice = version_slct.options[version_slct.selectedIndex].value;
-	var ws = new WebSocket("ws://175.102.11.202:8001");
+	var ws = new WebSocket("ws://localhost:8001");
 	ws.addEventListener("open", function(e) {
 		var request = {
 			"method": "GET",

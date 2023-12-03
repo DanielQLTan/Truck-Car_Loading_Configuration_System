@@ -5,7 +5,7 @@ body {
 	padding: 0;
 }
 img {
-	width: 80%;
+	width: 100%;
 }
 
 /*Title Bar*/
@@ -93,8 +93,16 @@ p {
 	font-size: 24px;
 }
 .angle {
-	width: 25%;
+	width: 20%;
 	margin-right: 5%;
 	margin-top: 20px;
 }
-
+.help {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.help img {
+	width: 50%;
+}
