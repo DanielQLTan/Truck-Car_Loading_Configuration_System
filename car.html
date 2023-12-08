@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>整车数据看板</title>
+	<link rel="stylesheet" type="text/css" href="css/car.css">
+</head>
+	<body>
+		<header>
+			<div class="tab">
+				<button onclick="window.location.href='truck.html'">载装车点位看板</button>
+			</div>
+			<div class="tab">
+				<button class="current" disabled>整车数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='supp.html'">运输供应商数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='filter.html'">车位筛选数据看板</button>
+			</div>
+		</header>
+		<main>
+			<div class="col left">
+				<form class="car-selection" action="">
+					<select name="brand" class="top-select" id="brand" onchange="get_model_list()">
+						<option value="" selected disabled>--请选择品牌--</option>
+						<!-- <option value="A">品牌 A</option>
+						<option value="B">品牌 B</option> -->
+					</select>
+					<select name="model" class="top-select" id="model" onchange="get_version_list()">
+						<option value="" selected disabled>--请选择车型--</option>
+						<!-- <option value="1">车型 1</option>
+						<option value="2">车型 2</option> -->
+					</select>
+					<div class="box">
+						<img id="car_photo" src="img/placeholder.jpg" alt="car photo">
+						<img id="car_blue" src="img/placeholder.jpg" alt="car blueprint">
+					</div>
+					<select name="version" class="bot-select" id="version" onchange="get_car_img()">
+						<option value="" selected disabled>--请选择版本--</option>
+						<!-- <option value="a">版本 a</option>
+						<option value="b">版本 b</option> -->
+					</select>
+					<button type="reset" onclick="clean()">清空</button>
+					<button type="button" onclick="get_car_info()">确认</button>
+				</form>
+			</div>
+			<div class="col mid">
+				<div class="row">
+					<div class="dimension">尺寸（长/宽/高/轴距-mm)</div>
+				</div>
+				<div class="row">
+					<div class="dimension">长(mm)</div>
+					<div class="data" id="length">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">宽(mm)</div>
+					<div class="data" id="width">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">高(mm)</div>
+					<div class="data" id="height">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">轴距(mm)</div>
+					<div class="data" id="axis">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">前轮距(mm)</div>
+					<div class="data" id="front">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">后轮距(mm)</div>
+					<div class="data" id="back">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">轮胎尺寸</div>
+					<div class="data" id="tire">-</div>
+				</div>
+				<div class="row">
+					<div class="dimension">扭矩数据</div>
+					<div class="data" id="torque">-</div>
+				</div>
+			</div>
+			<div class="col right">
+				<img class="trucks" src="img/car/truck1.jpg" alt="truck side view 1">
+				<img class="trucks" src="img/car/truck2.jpg" alt="truck side view 2">
+				<img class="trucks" src="img/car/truck3.jpg" alt="truck side view 3">
+			</div>
+		</main>
+		<script type="text/javascript" src="js/car.js"></script>
+	</body>
+</html>

@@ -1,0 +1,181 @@
+// truck
+// on startup
+request = {
+	"method": "GET",
+	"params": {
+		"key": "supp_list"
+	}
+};
+receive = ["供应商1", "供应商2", "供应商3", "供应商4", "供应商5"];
+request = {
+	"method": "GET",
+	"params": {
+		"key": "car-model_list"
+	}
+};
+receive = ["轿车车型1", "轿车车型2", "轿车车型3", "轿车车型4", "轿车车型5"];
+
+// on supplier choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "truck_list",
+		"value": {
+			"supplier": "某供应商"
+		}
+	}
+};
+receive = ["板车1", "板车2", "板车3", "板车4", "板车5"];
+
+// on truck choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "truck_info",
+		"value": {
+			"supplier": "某供应商",
+			"truck": "某板车"
+		}
+	}
+};
+receive = {
+	"image": "/img/truck/sample.jpg",
+	"size": {"x": 1000, "y": 500},
+	"positions": [{"x": 10, "y": 10, "z": "✓", "r": "reason"}, {"x": 20, "y": 20, "z": "⨯", "r": "reason"}, {"x": 30, "y": 30, "z": "?", "r": "reason"}]
+};
+
+// on car-model choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "car-version_list",
+		"value": {
+			"model": "某轿车车型"
+		}
+	}
+};
+receive = ["轿车版本1", "轿车版本2", "轿车版本3", "轿车版本4", "轿车版本5"];
+
+// on car-version choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "car_info",
+		"value": {
+			"model": "某轿车车型",
+			"version": "某轿车版本"
+		}
+	}
+};
+receive = {
+	"image": "/img/car/sample.jpg",
+	"size": {"x": 1000, "y": 500},
+	"positions": [{"x": 10, "y": 10, "z": "✓", "r": "reason"}, {"x": 20, "y": 20, "z": "⨯", "r": "reason"}, {"x": 30, "y": 30, "z": "?", "r": "reason"}]
+};
+
+
+
+// car
+// on startup
+request = {
+	"method": "GET",
+	"params": {
+		"key": "brand_list"
+	}
+};
+receive = ["品牌1", "品牌2", "品牌3", "品牌4", "品牌5"];
+
+// on brand choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "model_list",
+		"value": {
+			"brand": "某品牌"
+		}
+	}
+};
+receive = ["车型1", "车型2", "车型3", "车型4", "车型5"];
+
+// on model choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "version_list",
+		"value": {
+			"brand": "某品牌",
+			"model": "某车型"
+		}
+	}
+};
+receive = ["轿车版本1", "轿车版本2", "轿车版本3", "轿车版本4", "轿车版本5"];
+
+// on version choice OR confirmation
+request = {
+	"method": "GET",
+	"params": {
+		"key": "car_info",
+		"value": {
+			"brand": "某品牌",
+			"model": "某车型",
+			"version": "某轿车版本"
+		}
+	}
+};
+receive = {
+	"image": "/img/car/sample.jpg",
+	"blueprint": "/img/car/sample_blue.jpg",
+	"length": 5056,
+	"width": 1964,
+	"height": 1780,
+	"axis": 2863,
+	"front": 1687,
+	"back": 1683,
+	"tire": "235/55_R20",
+	"torque": 350
+};
+
+
+
+// supp
+// on startup
+request = {
+	"method": "GET",
+	"params": {
+		"key": "supp_list"
+	}
+};
+receive = ["供应商1", "供应商2", "供应商3", "供应商4", "供应商5"];
+
+// on supplier choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "supp_info",
+		"value": {
+			"supplier": "某供应商"
+		}
+	}
+};
+receive = {
+	"email": "xxx@yyy.com",
+	"phone": "+86-12345678901",
+	"truck_list": ["板车1", "板车2", "板车3", "板车4", "板车5"]
+};
+
+// on truck choice
+request = {
+	"method": "GET",
+	"params": {
+		"key": "supp_truck",
+		"value": {
+			"supplier": "某供应商",
+			"truck": "某板车"
+		}
+	}
+};
+receive = {
+	"size": "板车尺寸信息",
+	"image": "/img/truck/sample.jpg",
+	"angles": ["/img/truck/angle1.jpg", "/img/truck/angle2.jpg", "/img/truck/angle3.jpg"]
+};

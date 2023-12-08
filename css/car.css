@@ -1,0 +1,114 @@
+/*Global*/
+body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+}
+img {
+	width: 100%;
+}
+
+/*Title Bar*/
+.tab {
+	display: inline-block;
+	padding: 10px;
+	margin: 20px 10px;
+}
+header button {
+	font-size: 24px;
+	background-color: deepskyblue;
+	color: white;
+	padding: 10px 20px;
+	margin: 20px 10px;
+}
+.current {
+	background-color: steelblue;
+}
+
+/*Columns*/
+main {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.col {
+	padding: 10px;
+}
+.left {
+	width: 30%;
+	margin-left: 20px;
+}
+.mid {
+	width: 25%;
+	margin-left: 10px;
+}
+.right {
+	width: 30%;
+	margin-right: 20px;
+}
+
+/*Form*/
+select {
+	font-size: 24px;
+	padding: 10px;
+	margin-bottom: 20px;
+	appearance: none;
+  	padding-right: 25px;
+}
+.top-select {
+	background-color: #EEE;
+	color: black;
+	border-color: #DDD;
+	margin-right: 20px;
+}
+.bot-select {
+	display: block;
+	background-color: grey;
+	color: white;
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+form button {
+	font-size: 24px;
+	background-color: cornflowerblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+.box {
+    border: 5px solid black;
+    padding: 10px;
+}
+
+/*Data Display*/
+.row {
+    display: block;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.dimension {
+	display: inline-block;
+	font-size: 24px;
+	color: black;
+	padding: 5px;
+}
+.data {
+	display: inline-block;
+	float: right;
+	width: 50%;
+	font-size: 24px;
+	color: white;
+	background-color: grey;
+	text-align: center;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+/*Trucks*/
+.trucks {
+	width: 90%;
+	margin-bottom: 50px;
+}

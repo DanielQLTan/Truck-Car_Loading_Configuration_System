@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>运输供应商数据看板</title>
+	<link rel="stylesheet" type="text/css" href="css/supp.css">
+</head>
+	<body>
+		<header>
+			<div class="tab">
+				<button onclick="window.location.href='truck.html'">载装车点位看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='car.html'">整车数据看板</button>
+			</div>
+			<div class="tab">
+				<button class="current" disabled>运输供应商数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='filter.html'">车位筛选数据看板</button>
+			</div>
+		</header>
+		<main>
+			<div class="col left">
+				<form action="">
+					<label for="supp">供应商</label>
+					<select name="supplier" id="supp" onchange="get_supp_info()">
+						<option value="" selected disabled>--请选择供应商--</option>
+						<!-- <option value="1">供应商 1</option>
+						<option value="2">供应商 2</option> -->
+					</select>
+					<label for="truck">装载板车</label>
+					<select name="truck" id="truck" onchange="get_truck_info()">
+						<option value="" selected disabled>--请选择装载板车--</option>
+						<!-- <option value="A">板车 A</option>
+						<option value="B">板车 B</option> -->
+					</select>
+				</form>
+				<div class="contact">联系人信息</div>
+				<div class="info" id="email">电子邮箱</div>
+				<div class="info" id="phone">电话号码</div>
+			</div>
+			<div class="col right">
+				<div class="help">
+					<img id="truck_photo" src="img/placeholder.jpg" alt="truck info image">
+				</div>
+				<div class="box">
+					<p id="truck_size">板车尺寸信息</p>
+				</div>
+				<div id="angles">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 1">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 2">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 3">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 4">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 5">
+					<img class="angle" src="img/placeholder.jpg" alt="truck angle 6">
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript" src="js/supp.js"></script>
+	</body>
+</html>

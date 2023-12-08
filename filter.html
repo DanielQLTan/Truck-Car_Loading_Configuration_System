@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>车位筛选数据看板</title>
+	<link rel="stylesheet" type="text/css" href="css/filter.css">
+</head>
+	<body>
+		<header>
+			<div class="tab">
+				<button onclick="window.location.href='truck.html'">载装车点位看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='car.html'">整车数据看板</button>
+			</div>
+			<div class="tab">
+				<button onclick="window.location.href='supp.html'">运输供应商数据看板</button>
+			</div>
+			<div class="tab">
+				<button class="current" disabled>车位筛选数据看板</button>
+			</div>
+		</header>
+		<main>
+			<div class="col left">
+				<form action="">
+					<label for="supp">选择供应商</label>
+					<select name="supplier" id="supp" onchange="get_truck_list()">
+						<option value="" selected disabled>--请选择供应商--</option>
+					</select>
+					<label for="truck">选择装载板车</label>
+					<select name="truck" id="truck" onchange="get_truck_info()">
+						<option value="" selected disabled>--请选择装载板车--</option>
+					</select>
+					<label>轿车图片展示</label>
+					<img class="car" id="car_photo" src="img/placeholder.jpg" alt="car sample image">
+					<p id="car_name"></p>
+				</form>
+			</div>
+			<div class="col right" id="rcol">
+				<div class="arr">
+				    <select name="car-model" id="car-model-1" onchange="get_car_info(1)">
+				        <option value="" selected disabled>--1 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-2" onchange="get_car_info(2)">
+				        <option value="" selected disabled>--2 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-3" onchange="get_car_info(3)">
+				        <option value="" selected disabled>--3 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-4" onchange="get_car_info(4)">
+				        <option value="" selected disabled>--4 号位--</option>
+				    </select>
+				</div>
+				<div class="help">
+					<img id="truck_photo" src="img/placeholder.jpg" alt="truck side view">
+				</div>
+				<div class="arr">
+				    <select name="car-model" id="car-model-5" onchange="get_car_info(5)">
+				        <option value="" selected disabled>--5 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-6" onchange="get_car_info(6)">
+				        <option value="" selected disabled>--6 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-7" onchange="get_car_info(7)">
+				        <option value="" selected disabled>--7 号位--</option>
+				    </select>
+				    <select name="car-model" id="car-model-8" onchange="get_car_info(8)">
+				        <option value="" selected disabled>--8 号位--</option>
+				    </select>
+				</div>
+			</div>
+		</main>
+		<script type="text/javascript" src="js/filter.js"></script>
+	</body>
+</html>
